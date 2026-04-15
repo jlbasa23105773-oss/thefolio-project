@@ -14,26 +14,13 @@ const User          = require('./models/User');
 const app = express();
 
 // ── CORS ── must come BEFORE routes, and only declared ONCE
-// ROOT CAUSE #1 FIX: app.use(cors()) was called twice — the first open call
-// was blocking the second configured one. Removed the duplicate.
-const allowedOrigins = [
-  'http://localhost:3000',
-  'http://127.0.0.1:3000',
-  'http://localhost:3001',
-  'http://127.0.0.1:3001',
-];
-const corsOptions = {
-    origin: function (origin, callback) {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    credentials: true,
-    optionsSuccessStatus: 200,
-};
-app.use(cors(corsOptions));
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://thefolio-project-jx95o2ug5-johnlloydbasa009-5876s-projects.vercel.app',
+  ],
+  credentials: true,
+}));
 
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
