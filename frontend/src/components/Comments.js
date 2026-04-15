@@ -79,7 +79,7 @@ const Comments = ({ postId }) => {
                 <form className="comment-form" onSubmit={handleSubmitComment}>
                     <div className="comment-input-group">
                         <img
-                            src={user.profilePic ? `http://localhost:5000/uploads/${user.profilePic}` : 'https://via.placeholder.com/40'}
+                            src={user.profilePic ? `${process.env.REACT_APP_BACKEND_URL}/uploads/${user.profilePic}` : 'https://via.placeholder.com/40'}
                             alt={user.name}
                             className="comment-avatar"
                         />
@@ -120,7 +120,7 @@ const Comments = ({ postId }) => {
                         <div key={comment._id} className="comment-item">
                             <div className="comment-header">
                                 <img
-                                    src={comment.author?.profilePic ? `http://localhost:5000/uploads/${comment.author.profilePic}` : 'https://via.placeholder.com/40'}
+                                    src={comment.author?.profilePic ? `${process.env.REACT_APP_BACKEND_URL}/uploads/${comment.author.profilePic}` : 'https://via.placeholder.com/40'}
                                     alt={comment.author?.name}
                                     className="comment-avatar-small"
                                 />

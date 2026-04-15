@@ -107,7 +107,7 @@ const PostPage = () => {
                 {post.image && (
                     <div className="map-container" style={{ margin: '30px 0', padding: '0' }}>
                         <img 
-                            src={`http://localhost:5000/uploads/${post.image}`} 
+                            src={`${process.env.REACT_APP_BACKEND_URL}/uploads/${post.image}`} 
                             alt={post.title} 
                             style={{ width: '100%', display: 'block' }} 
                         />

@@ -49,7 +49,7 @@ const Profile = () => {
     };
 
     const picSrc = user?.profilePic
-        ? `http://localhost:5000/uploads/${user.profilePic}`
+        ? `${process.env.REACT_APP_BACKEND_URL}/uploads/${user.profilePic}`
         : '/assets/default-avatar.png';
 
     return (

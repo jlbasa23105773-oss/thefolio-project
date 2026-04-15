@@ -102,7 +102,7 @@ const Home = () => {
                                         <div className="card-content">
                                             {post.image && (
                                                 <img 
-                                                    src={`http://localhost:5000/uploads/${post.image}`} 
+                                                    src={`${process.env.REACT_APP_BACKEND_URL}/uploads/${post.image}`} 
                                                     alt={post.title} 
                                                     style={{ width: '100%', borderRadius: '8px', marginBottom: '10px' }}
                                                 />

@@ -87,7 +87,7 @@ const PostCard = ({ post }) => {
         <div className="post-card">
             <div className="post-header">
                 <div className="post-header-top">
-                    <img src={post.author?.profilePic ? `http://localhost:5000/uploads/${post.author.profilePic}` : 'https://via.placeholder.com/40'} alt="profile" className="author-avatar" />
+                    <img src={post.author?.profilePic ? `${process.env.REACT_APP_BACKEND_URL}/uploads/${post.author.profilePic}` : 'https://via.placeholder.com/40'} alt="profile" className="author-avatar" />
                     <div className="post-header-info">
                         <h4>{post.author?.name}</h4>
                         <small>{new Date(post.createdAt).toLocaleDateString()}</small>
@@ -98,7 +98,7 @@ const PostCard = ({ post }) => {
 
             <div className="post-body">
                 <p>{post.body}</p>
-                {post.image && <img src={`http://localhost:5000/uploads/${post.image}`} alt="post" className="post-image" />}
+                {post.image && <img src={`${process.env.REACT_APP_BACKEND_URL}/uploads/${post.image}`} alt="post" className="post-image" />}
             </div>
 
             {getTotalReactions() > 0 && (
