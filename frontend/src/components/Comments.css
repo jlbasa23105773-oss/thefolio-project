@@ -1,0 +1,267 @@
+.comments-section {
+    background: #0a0a0a;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.comments-title {
+    color: #f1c40f;
+    font-size: 1.2rem;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+}
+
+/* ===== COMMENT FORM ===== */
+.comment-form {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #222;
+}
+
+.comment-input-group {
+    display: flex;
+    gap: 12px;
+}
+
+.comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #1a1a1a;
+    flex-shrink: 0;
+}
+
+.comment-input-wrapper {
+    flex: 1;
+}
+
+.comment-textarea {
+    width: 100%;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #ddd;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    resize: vertical;
+    margin-bottom: 10px;
+    transition: border-color 0.2s ease;
+}
+
+.comment-textarea:focus {
+    outline: none;
+    border-color: #f1c40f;
+    box-shadow: 0 0 8px rgba(241, 196, 15, 0.1);
+}
+
+.comment-textarea::placeholder {
+    color: #666;
+}
+
+.comment-submit-btn {
+    background: #f1c40f;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.comment-submit-btn:hover:not(:disabled) {
+    background: #e6b800;
+    transform: translateY(-2px);
+}
+
+.comment-submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ===== LOGIN PROMPT ===== */
+.login-prompt {
+    background: rgba(241, 196, 15, 0.05);
+    border: 1px solid rgba(241, 196, 15, 0.2);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-prompt p {
+    margin: 0;
+    color: #ddd;
+    font-size: 0.95rem;
+}
+
+.login-prompt a {
+    color: #f1c40f;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.login-prompt a:hover {
+    color: #e6b800;
+    text-decoration: underline;
+}
+
+/* ===== COMMENTS LIST ===== */
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.loading-text,
+.no-comments {
+    text-align: center;
+    color: #888;
+    padding: 20px;
+    font-style: italic;
+    margin: 0;
+}
+
+/* ===== COMMENT ITEM ===== */
+.comment-item {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 15px;
+    transition: all 0.2s ease;
+}
+
+.comment-item:hover {
+    border-color: #333;
+    background: #121212;
+}
+
+.comment-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.comment-avatar-small {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #1a1a1a;
+    flex-shrink: 0;
+}
+
+.comment-meta {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.comment-author {
+    color: #f1c40f;
+    font-size: 0.95rem;
+}
+
+.comment-date {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.comment-delete-btn {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.comment-delete-btn:hover {
+    color: #ff6b6b;
+    transform: scale(1.2);
+}
+
+.comment-body {
+    padding-left: 46px;
+    margin-top: 0;
+}
+
+.comment-body p {
+    margin: 0;
+    color: #ddd;
+    line-height: 1.6;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .comments-section {
+        padding: 15px;
+        margin-top: 30px;
+    }
+
+    .comments-title {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+    .comment-form {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+
+    .comment-textarea {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .comment-item {
+        padding: 12px;
+    }
+
+    .comment-body {
+        padding-left: 42px;
+    }
+
+    .comment-delete-btn {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .comment-input-group {
+        gap: 8px;
+    }
+
+    .comment-avatar {
+        width: 36px;
+        height: 36px;
+    }
+
+    .comment-textarea {
+        padding: 8px;
+        font-size: 0.9rem;
+        rows: 2;
+    }
+
+    .comment-submit-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+}

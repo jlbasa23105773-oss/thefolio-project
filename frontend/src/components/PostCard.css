@@ -1,0 +1,301 @@
+.post-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.post-card:hover {
+    box-shadow: 0 4px 16px rgba(241, 196, 15, 0.2);
+}
+
+/* ===== POST HEADER ===== */
+.post-header {
+    margin-bottom: 12px;
+}
+
+.post-header-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 10px;
+}
+
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #333;
+}
+
+.post-header-info {
+    flex: 1;
+}
+
+.post-header-info h4 {
+    margin: 0;
+    color: #f1c40f;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.post-header-info small {
+    display: block;
+    color: #888;
+    font-size: 0.85rem;
+}
+
+.post-title {
+    margin: 0;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* ===== POST BODY ===== */
+.post-body {
+    margin-bottom: 12px;
+}
+
+.post-body p {
+    margin: 0 0 12px 0;
+    color: #ddd;
+    line-height: 1.6;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.post-body p:last-child {
+    margin-bottom: 0;
+}
+
+.post-image {
+    width: 100%;
+    max-height: 400px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: #0a0a0a;
+    margin-top: 8px;
+}
+
+/* ===== REACTIONS BAR ===== */
+.post-reactions-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    margin: 8px 0;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.reaction-emoji-group {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.reaction-emoji {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.reaction-count-text {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.reaction-count-text:hover {
+    color: #f1c40f;
+}
+
+/* ===== POST ACTIONS ===== */
+.post-actions {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid #222;
+    padding-top: 8px;
+}
+
+.post-actions > * {
+    flex: 1;
+}
+
+.reaction-container {
+    position: relative;
+    flex: 1;
+}
+
+.react-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #888;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.react-btn:hover {
+    background: rgba(241, 196, 15, 0.1);
+    color: #f1c40f;
+}
+
+.react-btn.active {
+    background: rgba(241, 196, 15, 0.15);
+    color: #f1c40f;
+    font-weight: 600;
+}
+
+.like-icon {
+    font-size: 1.2rem;
+}
+
+/* ===== REACTION PICKER ===== */
+.reaction-picker {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 0;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 8px;
+    border-radius: 12px;
+    display: flex;
+    gap: 4px;
+    z-index: 100;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+    animation: slideUp 0.2s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reaction-option {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: #ddd;
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.reaction-option:hover {
+    background: rgba(241, 196, 15, 0.2);
+    border-color: #f1c40f;
+    color: #f1c40f;
+    transform: translateY(-2px);
+}
+
+.reaction-emoji-large {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.reaction-name {
+    display: block;
+    font-size: 0.7rem;
+}
+
+/* ===== COMMENT & SHARE BUTTONS ===== */
+.comment-btn,
+.share-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #888;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.comment-btn:hover,
+.share-btn:hover {
+    background: rgba(241, 196, 15, 0.1);
+    color: #f1c40f;
+}
+
+.share-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    color: #777;
+    background: transparent;
+}
+
+.share-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    color: #777;
+    background: transparent;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .post-card {
+        padding: 12px;
+    }
+
+    .post-title {
+        font-size: 1rem;
+    }
+
+    .reaction-picker {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .post-actions {
+        gap: 0;
+    }
+
+    .react-btn,
+    .comment-btn,
+    .share-btn {
+        font-size: 0.85rem;
+        padding: 6px 8px;
+    }
+
+    .reaction-emoji-large {
+        font-size: 1.5rem;
+    }
+
+    .reaction-name {
+        display: none;
+    }
+}
