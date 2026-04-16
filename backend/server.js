@@ -14,10 +14,12 @@ const User          = require('./models/User');
 const app = express();
 
 // ── CORS ── must come BEFORE routes, and only declared ONCE
+// ── CORS ── 
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://thefolio-project-jx95o2ug5-johnlloydbasa009-5876s-projects.vercel.app',
+    'https://thefolio-project.vercel.app', // Your main production domain
+    /\.vercel\.app$/                        // This regex allows ANY vercel.app subdomain from your account
   ],
   credentials: true,
 }));
